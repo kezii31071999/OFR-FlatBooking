@@ -47,7 +47,7 @@ public class FlatBookingController {
 		return new ResponseEntity<List<FlatBooking>>(list, new HttpHeaders(), HttpStatus.OK);// 200,json
 	}
 
-	@GetMapping("/find/{id}")
+	@GetMapping("/find/{bookingNo}")
 	public ResponseEntity<Optional<FlatBooking>> viewFlatBooking(@PathVariable("bookingNo")Integer bookingNo )  throws FlatBookingNotFoundException{
 		Optional<FlatBooking> entity = getService().viewFlatBooking(bookingNo);
 		@SuppressWarnings({ "rawtypes", "unchecked" })
